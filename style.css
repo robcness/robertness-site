@@ -1,20 +1,19 @@
 /* Rob Ness, personal site.
    Plain HTML and CSS, no frameworks.
-   Headings: Cormorant (SIL Open Font License, self-hosted; licence in assets/fonts/OFL-Cormorant.txt).
-   Body: Helvetica where installed (Apple devices), otherwise Arial. Helvetica is a licensed font and cannot be embedded freely. */
+   Fonts (self-hosted, so they look the same on every device): Zodiak for headings, Satoshi for body text.
+   Both are free for commercial use under the ITF Free Font License (fontshare.com/licenses/itf-ffl).
+   If a font ever fails to load, the browser falls back to a standard system serif or sans-serif. */
 
-@font-face {
-  font-family: "Cormorant";
-  src: url("assets/fonts/cormorant-latin.woff2") format("woff2");
-  font-weight: 500 700;
-  font-style: normal;
-  font-display: swap;
-}
+@font-face { font-family: "Satoshi"; src: url("assets/fonts/satoshi-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Satoshi"; src: url("assets/fonts/satoshi-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Satoshi"; src: url("assets/fonts/satoshi-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Zodiak";  src: url("assets/fonts/zodiak-400.woff2")  format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Zodiak";  src: url("assets/fonts/zodiak-700.woff2")  format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
 :root {
   /* Type */
-  --font-display: "Cormorant", Garamond, "Times New Roman", serif;
-  --font-body: Helvetica, Arial, sans-serif;
+  --font-display: "Zodiak", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-body: "Satoshi", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
   --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
   --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
@@ -122,18 +121,13 @@ a:hover { text-decoration-thickness: 0.14em; }
 h1, h2 {
   font-family: var(--font-display);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
   margin: 0;
   text-wrap: balance;
 }
-/* Cormorant has a small x-height, so its headings are set larger than the body scale. */
-h1 { font-size: clamp(2.2rem, 1.3rem + 3.4vw, 4.25rem); letter-spacing: 0.005em; }
-h2 {
-  font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  margin-bottom: var(--space-6);
-}
+h1 { font-size: var(--text-2xl); }
+h2 { font-size: var(--text-xl); margin-bottom: var(--space-6); }
 
 .tagline {
   font-size: var(--text-lg);
