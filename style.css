@@ -213,6 +213,7 @@ h3 { font-size: var(--text-lg); font-weight: 700; line-height: 1.25; margin: 0 0
 .roles { margin: 0 0 var(--space-3); }
 .roles li { margin-bottom: var(--space-3); max-width: var(--measure); }
 .roles .dates { display: block; color: var(--muted); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+.roles .dates a { white-space: nowrap; }
 .roles--earlier strong { display: block; }
 .roles--earlier .dates { display: inline; white-space: nowrap; }
 .points { margin: var(--space-3) 0 0; max-width: var(--measure); }
